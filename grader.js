@@ -63,8 +63,6 @@ var checkHtmlFile = function(url, htmlfile, checksfile) {
     var out = {};
     if(url) {
       rest.get(url).on('complete', function(result) {
-         var webPage = result;
-         console.log(result);
          $ = cheerio.load(result);
          for(var ii in checks) {
            var present = $(checks[ii]).length > 0;
